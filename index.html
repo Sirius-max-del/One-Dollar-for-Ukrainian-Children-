@@ -1,183 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>One Dollar for Strangers</title>
-
-<style>
-* {
-    box-sizing: border-box;
+ukraine-card {
+  border-top: 5px solid #ffd500;
+  background: linear-gradient(180deg, #ffffff, #f0f6ff);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #101827;
-    color: white;
-    text-align: center;
+.ukraine-card h2 {
+  color: #0756a5;
 }
 
-header {
-    background: #17243a;
-    padding: 25px 12px;
+.ukraine-card h3 {
+  color: #0874ce;
+  line-height: 1.5;
 }
 
-h1 {
-    color: #facc15;
-    font-size: 28px;
-    margin: 5px;
+.ukraine-card p {
+  line-height: 1.8;
 }
 
-h2 {
-    font-size: 20px;
-    margin: 10px 0;
+  background: #0756a5;
+  color: white;
+  padding: 35px 15px;
 }
 
-p {
-    font-size: 15px;
-    line-height: 1.5;
+footer p {
+  font-size: 14px;
 }
 
-section {
-    max-width: 600px;
-    margin: auto;
-    padding: 12px;
+footer h3 {
+  color: #ffd500;
 }
 
-.card {
-    background: #1c2b43;
-    padding: 16px;
-    margin: 12px 0;
-    border-radius: 14px;
-}
+@media(max-width: 480px) {
+  header {
+    padding: 45px 15px;
+  }
 
-.qr {
-    width: 180px;
-    max-width: 80%;
-    height: auto;
-    background: white;
-    padding: 7px;
-    border-radius: 10px;
-    margin: 10px auto;
-}
+  section {
+    padding: 30px 15px;
+  }
 
-.address {
-    background: #101827;
-    padding: 12px;
-    border-radius: 8px;
-    word-break: break-all;
-    font-size: 13px;
-    margin: 12px 0;
-}
-
-button {
-    background: #facc15;
-    color: #101827;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.small {
-    color: #b8c4d8;
-    font-size: 12px;
-}
-
-footer {
-    padding: 15px;
-    color: #9ca3af;
-    font-size: 12px;
+  button {
+    padding: 12px 14px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<nav class="languages" aria-label="Language selection">
+  <button onclick="setLanguage('en')">🇬🇧 English</button>
+  <button onclick="setLanguage('uk')">🇺🇦 Українська</button>
+  <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+</nav>
+
 <header>
-    <h1>One Dollar for Strangers</h1>
-    <p>One dollar can make a difference.</p>
-    <p>Small kindness. Big impact.</p>
+  <h1>ONE DOLLAR FOR STRANGERS</h1>
+  <p id="tagline">One dollar can make a difference.</p>
+  <p id="slogan">Small kindness. Big impact. ❤️</p>
 </header>
+
+<div class="hero-goal">
+  <h2 id="goalTitle">Our Fundraising Goal</h2>
+  <div class="goal">10,000 USDT</div>
+  <p id="goalDescription">
+    Together, we can make a difference.
+  </p>
+</div>
 
 <section>
 
-    <div class="card">
-        <h2>Our Mission</h2>
-        <p>
-            We believe that one dollar from many people
-            can bring hope and support to strangers around the world.
-        </p>
-        <p><strong>Our fundraising goal: 10,000 USDT</strong></p>
-    </div>
+  <div class="card">
+    <h2 id="missionTitle"></h2>
+    <h3 id="missionSubtitle"></h3>
+    <p id="missionText"></p>
+  </div>
 
-    <div class="card">
-        <h2>Donate with USDT TRC20</h2>
-        <p>Scan the QR code to send USDT.</p>
+  <div class="card">
+    <h2 id="helpTitle"></h2>
+    <p id="helpText"></p>
+  </div>
 
-        <img
-            class="qr"
-            src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-            alt="USDT TRC20 QR Code"
-        >
+  <div class="card">
+    <h2 id="whyTitle"></h2>
+    <p id="whyText"></p>
+  </div>
 
-        <p><strong>Wallet address:</strong></p>
+  <div class="card">
+    <h2 id="transparencyTitle"></h2>
+    <p id="transparencyText"></p>
+  </div>
 
-        <div class="address" id="wallet">
-            TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
-        </div>
+</section>
 
-        <button onclick="copyWallet()">Copy Wallet Address</button>
+<section class="donate card">
 
-        <p class="small">
-            Network: TRON (TRC20) | Currency: USDT
-        </p>
-    </div>
+  <h2 id="donateTitle"></h2>
+  <p id="donateText"></p>
 
-    <div class="card">
-        <h2>Donate with Binance Pay</h2>
-        <p>Scan the Binance Pay QR code.</p>
+  <h3>USDT TRC20</h3>
+  <p id="qrText"></p>
 
-        <img
-            class="qr"
-            src="binance.jpg"
-            alt="Binance Pay QR Code"
-        >
+  <img
+    class="qr"
+    src="images/usdt-trc20-qr.png"
+    alt="USDT TRC20 donation QR code"
+    onerror="this.style.display='none'; document.getElementById('qrError').style.display='block';"
+  >
 
-        <p class="small">
-            Please check the payment details before sending.
-        </p>
-    </div>
+  <p id="qrError" style="display:none;color:#b00020;">
+    QR code image could not be loaded.
+  </p>
 
-    <div class="card">
-        <h2>Thank You!</h2>
-        <p>
-            Every contribution is voluntary.
-            Thank you for supporting our project
-            and helping make a difference.
-        </p>
-    </div>
+  <h3 id="walletTitle"></h3>
+
+  <div class="wallet" id="wallet">
+    TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
+  </div>
+
+  <button onclick="copyWallet()" id="copyButton">
+    Copy Wallet Address
+  </button>
+
+  <p>
+    <strong id="networkLabel">Network:</strong> TRON (TRC20)<br>
+    <strong id="currencyLabel">Currency:</strong> USDT
+  </p>
+
+  <div class="note" id="securityNote"></div>
+
+  <p id="thankYou"></p>
 
 </section>
 
 <footer>
-    © 2026 One Dollar for Strangers
+  <h3>ONE DOLLAR FOR STRANGERS ❤️</h3>
+
+  <p id="footerSlogan">
+    One dollar can make a difference.
+  </p>
+
+  <p id="contactLabel">Contact:</p>
+  <p>YOUR_EMAIL_HERE</p>
+
+  <p>© 2026 One Dollar for Strangers</p>
 </footer>
 
 <script>
-function copyWallet() {
-    const wallet = "TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
 
-    navigator.clipboard.writeText(wallet)
-        .then(() => alert("Wallet address copied!"))
-        .catch(() => alert("Please copy the wallet address manually."));
-}
-</script>
+const walletAddress =
+"TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
 
-</body>
-</html>
+const translations = {
+
+en: {
+  tagline: "One dollar can make a difference.",
+  slogan: "Small kindness. Big impact. ❤️",
+  goalTitle: "OUR FUNDRAISING GOAL",
+  goalDescription: "Together, we can make a difference.",
+  missionTitle: "OUR MISSION",
+  missionSubtitle: "One Dollar Can Make a Difference.",
+  missionText: "We believe kindness has no borders. One Dollar for Strangers brings people together to support strangers in need.",
+  helpTitle: "HELPING UKRAINE 🇺🇦",
+  helpText: "Our mission is to support Ukrainian children, families and people affected by war with food, clothing, educational materials and humanitarian assistance.",
+  whyTitle: "WHY ONE DOLLAR?",
+  whyText: "One dollar may seem small, but thousands of people together can create meaningful change. Everyone can help.",
+  transparencyTitle: "TRANSPARENCY MATTERS",
+  transparencyText: "We believe every donation deserves responsibility and transparency. Donation records, financial updates and information about how funds are used should be published and made available to supporters.",
+  donateTitle: "SUPPORT OUR MISSION ❤️",
+  donateText: "Join people around the world in bringing hope to those who need it.",
+  qrText: "Scan the QR code to donate USDT.",
+  walletTitle: "WALLET ADDRESS",
+  copy: "COPY WALLET ADDRESS",
+  network: "Network:",
+  currency: "Currency:",
+  security: "IMPORTANT: Only send USDT using the TRON (TRC20) network. Sending other tokens or using another network may result in permanent loss of funds. Always verify the wallet address before sending.",
+  thank: "Thank you for your kindness! ❤️",
+  footer: "One dollar can make a difference.",
+  contact: "Contact:",
+  copied: "Wallet address copied!",
+  failed: "Please copy the wallet address manually:"
+},
+
+uk: {
+  tagline: "Один долар може змінити життя.",
+  slogan: "Маленька доброта. Великий вплив. ❤️",
+  goalTitle: "НАША МЕТА ЗБОРУ",
+  goalDescription: "Разом ми можемо змінити світ на краще.",
+  missionTitle: "НАША МІСІЯ",
+  missionSubtitle: "Один долар може змінити життя.",
+  missionText: "Ми віримо, що доброта не має кордонів. One Dollar for Strangers об'єднує людей задля підтримки тих, хто потребує допомоги.",
+  helpTitle: "ДОПОМОГА УКРАЇНІ 🇺🇦",
+  helpText: "Наша місія — підтримувати українських дітей, сім'ї та людей, які постраждали від війни, продуктами, одягом, навчальними матеріалами та гуманітарною допомогою.",
+  whyTitle: "ЧОМУ ОДИН ДОЛАР?",
+  whyText: "Один долар може здаватися невеликою сумою, але тисячі людей разом можуть змінити життя на краще.",
+  transparencyTitle: "ПРОЗОРІСТЬ ВАЖЛИВА",
+  transparencyText: "Ми віримо, що кожна пожертва потребує відповідального та прозорого використання. Інформація про пожертви, фінансові оновлення та використання коштів має бути доступною для благодійників.",
+  donateTitle: "ПІДТРИМАЙТЕ НАШУ МІСІЮ ❤️",
+  donateText: "Приєднуйтесь до людей з усього світу, щоб подарувати надію тим, хто її потребує.",
+  qrText: "Відскануйте QR-код для пожертви USDT.",
+  walletTitle: "АДРЕСА ГАМАНЦЯ",
+  copy: "СКОПІЮВАТИ АДРЕСУ",
+  network: "Мережа:",
+  currency: "Валюта
