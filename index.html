@@ -1,204 +1,311 @@
-ukraine-card {
-  border-top: 5px solid #ffd500;
-  background: linear-gradient(180deg, #ffffff, #f0f6ff);
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="One Dollar for Strangers — small kindness, big impact. Supporting Ukrainian children and families.">
+<title>One Dollar for Strangers ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f3f6fc;
+ color:#183153;
 }
-
-.ukraine-card h2 {
-  color: #0756a5;
+nav{
+ background:#073968;
+ padding:13px;
+ text-align:center;
 }
-
-.ukraine-card h3 {
-  color: #0874ce;
-  line-height: 1.5;
+button{
+ cursor:pointer;
+ border:0;
+ border-radius:9px;
+ padding:12px 17px;
+ margin:4px;
+ font-weight:bold;
 }
-
-.ukraine-card p {
-  line-height: 1.8;
+.lang{background:#fff;color:#0756a5}
+.hero{
+ background:linear-gradient(135deg,#063b75,#087bd0);
+ color:white;
+ text-align:center;
+ padding:85px 20px;
 }
-
-  background: #0756a5;
-  color: white;
-  padding: 35px 15px;
+.hero h1{
+ color:#ffd500;
+ font-size:clamp(32px,6vw,54px);
+ margin:10px 0;
 }
-
-footer p {
-  font-size: 14px;
+.hero p{font-size:19px;line-height:1.7}
+.hero .heart{font-size:40px}
+.goal{
+ background:#ffd500;
+ text-align:center;
+ padding:35px 15px;
 }
-
-footer h3 {
-  color: #ffd500;
+.goal h2{color:#0756a5}
+.goal strong{font-size:clamp(36px,8vw,55px);color:#0756a5}
+section{
+ max-width:950px;
+ margin:auto;
+ padding:35px 20px;
 }
-
-@media(max-width: 480px) {
-  header {
-    padding: 45px 15px;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-
-  button {
-    padding: 12px 14px;
-  }
+.card{
+ background:white;
+ padding:30px;
+ margin:22px 0;
+ border-radius:18px;
+ box-shadow:0 7px 25px #16345a12;
+}
+.card h2{color:#0756a5;font-size:27px}
+.card p{font-size:17px;line-height:1.8}
+.ukraine{
+ border-top:6px solid #ffd500;
+ background:linear-gradient(145deg,#fff,#edf5ff);
+}
+.ukraine h2{font-size:30px}
+.highlight{
+ background:#0756a5;
+ color:white;
+ padding:22px;
+ border-radius:12px;
+ text-align:center;
+}
+.highlight h3{color:#ffd500}
+.donate{
+ border:2px solid #ffd500;
+ text-align:center;
+}
+.wallet{
+ background:#edf3fb;
+ padding:18px;
+ border-radius:10px;
+ overflow-wrap:anywhere;
+ color:#0756a5;
+ font-weight:bold;
+ margin:18px 0;
+}
+.copy{
+ background:#ffd500;
+ color:#17345a;
+ font-size:16px;
+ padding:15px 25px;
+}
+.qr{
+ width:200px;
+ max-width:100%;
+ border-radius:12px;
+ border:2px solid #0756a5;
+ padding:8px;
+}
+.note{
+ background:#fff8d8;
+ padding:15px;
+ border-radius:10px;
+ text-align:left;
+ font-size:14px;
+ line-height:1.7;
+}
+footer{
+ background:#073968;
+ color:white;
+ text-align:center;
+ padding:35px 15px;
+}
+footer h2{color:#ffd500}
+@media(max-width:500px){
+ .hero{padding:55px 15px}
+ .card{padding:22px 17px}
+ section{padding:20px 13px}
 }
 </style>
 </head>
 
 <body>
 
-<nav class="languages" aria-label="Language selection">
-  <button onclick="setLanguage('en')">🇬🇧 English</button>
-  <button onclick="setLanguage('uk')">🇺🇦 Українська</button>
-  <button onclick="setLanguage('ru')">🇷🇺 Русский</button>
+<nav>
+<button class="lang" onclick="setLang('en')">🇬🇧 English</button>
+<button class="lang" onclick="setLang('uk')">🇺🇦 Українська</button>
+<button class="lang" onclick="setLang('ru')">🇷🇺 Русский</button>
 </nav>
 
-<header>
-  <h1>ONE DOLLAR FOR STRANGERS</h1>
-  <p id="tagline">One dollar can make a difference.</p>
-  <p id="slogan">Small kindness. Big impact. ❤️</p>
+<header class="hero">
+<div class="heart">❤️</div>
+<h1>ONE DOLLAR FOR STRANGERS</h1>
+<p id="tagline">One dollar can make a difference.</p>
+<p id="slogan">Small kindness. Big impact.</p>
 </header>
 
-<div class="hero-goal">
-  <h2 id="goalTitle">Our Fundraising Goal</h2>
-  <div class="goal">10,000 USDT</div>
-  <p id="goalDescription">
-    Together, we can make a difference.
-  </p>
+<div class="goal">
+<h2 id="goalTitle">OUR FUNDRAISING GOAL</h2>
+<strong>10,000 USDT</strong>
+<p id="goalText">Together, we can make a difference.</p>
 </div>
 
 <section>
 
-  <div class="card">
-    <h2 id="missionTitle"></h2>
-    <h3 id="missionSubtitle"></h3>
-    <p id="missionText"></p>
-  </div>
+<div class="card">
+<h2 id="missionTitle">OUR MISSION</h2>
+<p id="missionText">We believe kindness has no borders. Our project brings people together to support strangers in need.</p>
+</div>
 
-  <div class="card">
-    <h2 id="helpTitle"></h2>
-    <p id="helpText"></p>
-  </div>
+<div class="card ukraine">
+<h2 id="ukraineTitle">🇺🇦 HELPING UKRAINE</h2>
+<h3 id="ukraineSubtitle">Together, we can bring hope to Ukrainian children and families.</h3>
+<p id="ukraineText">The war in Ukraine has affected many lives. Children, families and elderly people need care, support and humanitarian assistance.</p>
+<p id="helpList">
+❤️ Supporting Ukrainian children and families.<br>
+🥖 Food and clean drinking water.<br>
+👕 Clothing and essential supplies.<br>
+📚 Educational materials for children.<br>
+🏥 Humanitarian assistance.
+</p>
+<div class="highlight">
+<h3 id="whyTitle">WHY YOUR DONATION MATTERS</h3>
+<p id="whyText">Even one dollar can make a difference. Together, small acts of kindness can create meaningful change.</p>
+<strong>🇺🇦 TOGETHER FOR UKRAINE</strong>
+</div>
+</div>
 
-  <div class="card">
-    <h2 id="whyTitle"></h2>
-    <p id="whyText"></p>
-  </div>
+<div class="card">
+<h2 id="transTitle">TRANSPARENCY MATTERS</h2>
+<p id="transText">We believe every donation deserves responsibility and transparency. Financial updates and information about how funds are used should be shared with supporters.</p>
+</div>
 
-  <div class="card">
-    <h2 id="transparencyTitle"></h2>
-    <p id="transparencyText"></p>
-  </div>
+<div class="card donate">
+<h2 id="donateTitle">SUPPORT OUR MISSION ❤️</h2>
+<p id="donateText">Join people around the world in bringing hope to those who need it.</p>
 
-</section>
+<h3>USDT TRC20</h3>
 
-<section class="donate card">
+<img class="qr"
+src="images/usdt-trc20-qr.png"
+alt="USDT donation QR code"
+onerror="this.style.display='none'">
 
-  <h2 id="donateTitle"></h2>
-  <p id="donateText"></p>
+<h3 id="walletTitle">WALLET ADDRESS</h3>
+<div class="wallet" id="wallet">
+TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
+</div>
 
-  <h3>USDT TRC20</h3>
-  <p id="qrText"></p>
+<button class="copy" onclick="copyWallet()" id="copyBtn">COPY WALLET ADDRESS</button>
 
-  <img
-    class="qr"
-    src="images/usdt-trc20-qr.png"
-    alt="USDT TRC20 donation QR code"
-    onerror="this.style.display='none'; document.getElementById('qrError').style.display='block';"
-  >
+<p><strong>Network:</strong> TRON (TRC20)<br>
+<strong>Currency:</strong> USDT</p>
 
-  <p id="qrError" style="display:none;color:#b00020;">
-    QR code image could not be loaded.
-  </p>
+<div class="note" id="security">
+IMPORTANT: Only send USDT using the TRON (TRC20) network. Always verify the wallet address before sending.
+</div>
 
-  <h3 id="walletTitle"></h3>
-
-  <div class="wallet" id="wallet">
-    TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
-  </div>
-
-  <button onclick="copyWallet()" id="copyButton">
-    Copy Wallet Address
-  </button>
-
-  <p>
-    <strong id="networkLabel">Network:</strong> TRON (TRC20)<br>
-    <strong id="currencyLabel">Currency:</strong> USDT
-  </p>
-
-  <div class="note" id="securityNote"></div>
-
-  <p id="thankYou"></p>
+<p id="thanks">Thank you for your kindness! ❤️</p>
+</div>
 
 </section>
 
 <footer>
-  <h3>ONE DOLLAR FOR STRANGERS ❤️</h3>
-
-  <p id="footerSlogan">
-    One dollar can make a difference.
-  </p>
-
-  <p id="contactLabel">Contact:</p>
-  <p>YOUR_EMAIL_HERE</p>
-
-  <p>© 2026 One Dollar for Strangers</p>
+<h2>ONE DOLLAR FOR STRANGERS ❤️</h2>
+<p id="footerText">Small kindness. Big impact. Together for Ukraine. 🇺🇦</p>
+<p>© 2026 One Dollar for Strangers</p>
 </footer>
 
 <script>
+const walletAddress="TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
 
-const walletAddress =
-"TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
-
-const translations = {
-
-en: {
-  tagline: "One dollar can make a difference.",
-  slogan: "Small kindness. Big impact. ❤️",
-  goalTitle: "OUR FUNDRAISING GOAL",
-  goalDescription: "Together, we can make a difference.",
-  missionTitle: "OUR MISSION",
-  missionSubtitle: "One Dollar Can Make a Difference.",
-  missionText: "We believe kindness has no borders. One Dollar for Strangers brings people together to support strangers in need.",
-  helpTitle: "HELPING UKRAINE 🇺🇦",
-  helpText: "Our mission is to support Ukrainian children, families and people affected by war with food, clothing, educational materials and humanitarian assistance.",
-  whyTitle: "WHY ONE DOLLAR?",
-  whyText: "One dollar may seem small, but thousands of people together can create meaningful change. Everyone can help.",
-  transparencyTitle: "TRANSPARENCY MATTERS",
-  transparencyText: "We believe every donation deserves responsibility and transparency. Donation records, financial updates and information about how funds are used should be published and made available to supporters.",
-  donateTitle: "SUPPORT OUR MISSION ❤️",
-  donateText: "Join people around the world in bringing hope to those who need it.",
-  qrText: "Scan the QR code to donate USDT.",
-  walletTitle: "WALLET ADDRESS",
-  copy: "COPY WALLET ADDRESS",
-  network: "Network:",
-  currency: "Currency:",
-  security: "IMPORTANT: Only send USDT using the TRON (TRC20) network. Sending other tokens or using another network may result in permanent loss of funds. Always verify the wallet address before sending.",
-  thank: "Thank you for your kindness! ❤️",
-  footer: "One dollar can make a difference.",
-  contact: "Contact:",
-  copied: "Wallet address copied!",
-  failed: "Please copy the wallet address manually:"
+const translations={
+en:{
+tagline:"One dollar can make a difference.",
+slogan:"Small kindness. Big impact.",
+goalTitle:"OUR FUNDRAISING GOAL",
+goalText:"Together, we can make a difference.",
+missionTitle:"OUR MISSION",
+missionText:"We believe kindness has no borders. Our project brings people together to support strangers in need.",
+ukraineTitle:"🇺🇦 HELPING UKRAINE",
+ukraineSubtitle:"Together, we can bring hope to Ukrainian children and families.",
+ukraineText:"The war in Ukraine has affected many lives. Children, families and elderly people need care, support and humanitarian assistance.",
+helpList:"❤️ Supporting Ukrainian children and families.<br>🥖 Food and clean drinking water.<br>👕 Clothing and essential supplies.<br>📚 Educational materials for children.<br>🏥 Humanitarian assistance.",
+whyTitle:"WHY YOUR DONATION MATTERS",
+whyText:"Even one dollar can make a difference. Together, small acts of kindness can create meaningful change.",
+transTitle:"TRANSPARENCY MATTERS",
+transText:"We believe every donation deserves responsibility and transparency. Financial updates and information about how funds are used should be shared with supporters.",
+donateTitle:"SUPPORT OUR MISSION ❤️",
+donateText:"Join people around the world in bringing hope to those who need it.",
+walletTitle:"WALLET ADDRESS",
+copyBtn:"COPY WALLET ADDRESS",
+security:"IMPORTANT: Only send USDT using the TRON (TRC20) network. Always verify the wallet address before sending.",
+thanks:"Thank you for your kindness! ❤️",
+footerText:"Small kindness. Big impact. Together for Ukraine. 🇺🇦"
 },
+uk:{
+tagline:"Один долар може змінити життя.",
+slogan:"Маленька доброта. Великий вплив.",
+goalTitle:"НАША МЕТА ЗБОРУ",
+goalText:"Разом ми можемо змінити світ на краще.",
+missionTitle:"НАША МІСІЯ",
+missionText:"Ми віримо, що доброта не має кордонів. Наш проєкт об'єднує людей задля підтримки тих, хто потребує допомоги.",
+ukraineTitle:"🇺🇦 ДОПОМОГА УКРАЇНІ",
+ukraineSubtitle:"Разом ми можемо подарувати надію українським дітям та сім'ям.",
+ukraineText:"Війна в Україні вплинула на життя багатьох людей. Діти, сім'ї та літні люди потребують турботи, підтримки та гуманітарної допомоги.",
+helpList:"❤️ Підтримка українських дітей та сімей.<br>🥖 Їжа та питна вода.<br>👕 Одяг та необхідні речі.<br>📚 Навчальні матеріали для дітей.<br>🏥 Гуманітарна допомога.",
+whyTitle:"ЧОМУ ВАША ДОПОМОГА ВАЖЛИВА",
+whyText:"Навіть один долар може змінити життя. Разом маленькі добрі справи можуть створити великі зміни.",
+transTitle:"ПРОЗОРІСТЬ ВАЖЛИВА",
+transText:"Ми віримо, що кожна пожертва потребує відповідального та прозорого використання. Фінансові звіти та інформація про використання коштів мають бути доступні благодійникам.",
+donateTitle:"ПІДТРИМАЙТЕ НАШУ МІСІЮ ❤️",
+donateText:"Приєднуйтесь до людей з усього світу, щоб подарувати надію тим, хто її потребує.",
+walletTitle:"АДРЕСА ГАМАНЦЯ",
+copyBtn:"СКОПІЮВАТИ АДРЕСУ",
+security:"ВАЖЛИВО: Надсилайте лише USDT через мережу TRON (TRC20). Завжди перевіряйте адресу перед переказом.",
+thanks:"Дякуємо за вашу доброту! ❤️",
+footerText:"Маленька доброта. Великий вплив. Разом заради України. 🇺🇦"
+},
+ru:{
+tagline:"Один доллар может изменить жизнь.",
+slogan:"Маленькая доброта. Большое влияние.",
+goalTitle:"НАША ЦЕЛЬ СБОРА",
+goalText:"Вместе мы можем изменить мир к лучшему.",
+missionTitle:"НАША МИССИЯ",
+missionText:"Мы верим, что доброта не имеет границ. Наш проект объединяет людей ради поддержки тех, кому нужна помощь.",
+ukraineTitle:"🇺🇦 ПОМОЩЬ УКРАИНЕ",
+ukraineSubtitle:"Вместе мы можем подарить надежду украинским детям и семьям.",
+ukraineText:"Война в Украине затронула жизни многих людей. Дети, семьи и пожилые люди нуждаются в заботе, поддержке и гуманитарной помощи.",
+helpList:"❤️ Поддержка украинских детей и семей.<br>🥖 Продукты и питьевая вода.<br>👕 Одежда и необходимые вещи.<br>📚 Учебные материалы для детей.<br>🏥 Гуманитарная помощь.",
+whyTitle:"ПОЧЕМУ ВАША ПОМОЩЬ ВАЖНА",
+whyText:"Даже один доллар может изменить жизнь. Вместе маленькие добрые поступки могут создать большие перемены.",
+transTitle:"ПРОЗРАЧНОСТЬ ВАЖНА",
+transText:"Мы верим, что каждое пожертвование требует ответственного и прозрачного использования. Финансовые отчёты и информация о расходовании средств должны быть доступны жертвователям.",
+donateTitle:"ПОДДЕРЖИТЕ НАШУ МИССИЮ ❤️",
+donateText:"Присоединяйтесь к людям со всего мира, чтобы подарить надежду тем, кто в ней нуждается.",
+walletTitle:"АДРЕС КОШЕЛЬКА",
+copyBtn:"СКОПИРОВАТЬ АДРЕС",
+security:"ВАЖНО: Отправляйте только USDT через сеть TRON (TRC20). Всегда проверяйте адрес перед отправкой.",
+thanks:"Спасибо за вашу доброту! ❤️",
+footerText:"Маленькая доброта. Большое влияние. Вместе ради Украины. 🇺🇦"
+}
+};
 
-uk: {
-  tagline: "Один долар може змінити життя.",
-  slogan: "Маленька доброта. Великий вплив. ❤️",
-  goalTitle: "НАША МЕТА ЗБОРУ",
-  goalDescription: "Разом ми можемо змінити світ на краще.",
-  missionTitle: "НАША МІСІЯ",
-  missionSubtitle: "Один долар може змінити життя.",
-  missionText: "Ми віримо, що доброта не має кордонів. One Dollar for Strangers об'єднує людей задля підтримки тих, хто потребує допомоги.",
-  helpTitle: "ДОПОМОГА УКРАЇНІ 🇺🇦",
-  helpText: "Наша місія — підтримувати українських дітей, сім'ї та людей, які постраждали від війни, продуктами, одягом, навчальними матеріалами та гуманітарною допомогою.",
-  whyTitle: "ЧОМУ ОДИН ДОЛАР?",
-  whyText: "Один долар може здаватися невеликою сумою, але тисячі людей разом можуть змінити життя на краще.",
-  transparencyTitle: "ПРОЗОРІСТЬ ВАЖЛИВА",
-  transparencyText: "Ми віримо, що кожна пожертва потребує відповідального та прозорого використання. Інформація про пожертви, фінансові оновлення та використання коштів має бути доступною для благодійників.",
-  donateTitle: "ПІДТРИМАЙТЕ НАШУ МІСІЮ ❤️",
-  donateText: "Приєднуйтесь до людей з усього світу, щоб подарувати надію тим, хто її потребує.",
-  qrText: "Відскануйте QR-код для пожертви USDT.",
-  walletTitle: "АДРЕСА ГАМАНЦЯ",
-  copy: "СКОПІЮВАТИ АДРЕСУ",
-  network: "Мережа:",
-  currency: "Валюта
+function setLang(lang){
+const t=translations[lang];
+for(const key in t){
+const el=document.getElementById(key);
+if(el) el.innerHTML=t[key];
+}
+document.documentElement.lang=lang;
+}
+
+function copyWallet(){
+if(navigator.clipboard && window.isSecureContext){
+navigator.clipboard.writeText(walletAddress)
+.then(()=>alert("Wallet address copied!"))
+.catch(()=>alert("Please copy the wallet address manually: "+walletAddress));
+}else{
+alert("Please copy the wallet address manually: "+walletAddress);
+}
+}
+</script>
+</body>
+</html>
