@@ -1,139 +1,98 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>One Dollar for Strangers</title>
+
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background: #101827;
     color: white;
     text-align: center;
 }
+
 header {
-    padding: 45px 20px;
     background: #17243a;
+    padding: 25px 12px;
 }
-h1 { color: #facc15; font-size: 32px; }
-p { font-size: 17px; line-height: 1.6; }
+
+h1 {
+    color: #facc15;
+    font-size: 28px;
+    margin: 5px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
 section {
-    padding: 25px 18px;
-    max-width: 650px;
+    max-width: 600px;
     margin: auto;
+    padding: 12px;
 }
-.donate {
+
+.card {
     background: #1c2b43;
-    padding: 25px 18px;
-    border-radius: 15px;
-    margin: 20px auto;
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 14px;
 }
+
+.qr {
+    width: 180px;
+    max-width: 80%;
+    height: auto;
+    background: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
 .address {
     background: #101827;
-    padding: 14px;
+    padding: 12px;
     border-radius: 8px;
     word-break: break-all;
-    font-size: 14px;
-    margin: 15px 0;
+    font-size: 13px;
+    margin: 12px 0;
 }
+
 button {
     background: #facc15;
     color: #101827;
     border: none;
-    padding: 15px 22px;
+    padding: 12px 20px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    margin: 8px;
+    cursor: pointer;
 }
-.small { color: #b8c4d8; font-size: 13px; }
-img {
-    max-width: 90%;
-    height: auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-}
-footer { padding: 25px; color: #9ca3af; }
-</style>
-</head>
-<body>
-
-<header>
-<h1>One Dollar for Strangers</h1>
-<p>One dollar can make a difference.</p>
-<p>Small kindness. Big impact.</p>
-</header>
-
-<section>
-<h2>Our Mission</h2>
-<p>We believe that one dollar from many people can bring hope and support to strangers around the world.</p>
-
-<div class="donate">
-<h2>Support Our Project</h2>
-<h3>Goal: 10,000 USDT</h3>
-<p>Every voluntary contribution matters. Thank you for your kindness and support!</p>
-</div>
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250%26data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
-}
-</script>
-
-</body>
-</html>
 
 .small {
     color: #b8c4d8;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 footer {
-    padding: 25px;
+    padding: 15px;
     color: #9ca3af;
+    font-size: 12px;
 }
 </style>
 </head>
@@ -141,357 +100,84 @@ footer {
 <body>
 
 <header>
-<h1>One Dollar for Strangers</h1>
-<p>One dollar can make a difference.</p>
-<p>Small kindness. Big impact.</p>
+    <h1>One Dollar for Strangers</h1>
+    <p>One dollar can make a difference.</p>
+    <p>Small kindness. Big impact.</p>
 </header>
 
 <section>
-<h2>Our Mission</h2>
-<p>
-We believe that small voluntary donations
-from people around the world can help
-create new opportunities and support
-a better future.
-</p>
-</section>
 
-<section class="donate">
-<h2>Support Our Project</h2>
+    <div class="card">
+        <h2>Our Mission</h2>
+        <p>
+            We believe that one dollar from many people
+            can bring hope and support to strangers around the world.
+        </p>
+        <p><strong>Our fundraising goal: 10,000 USDT</strong></p>
+    </div>
 
-<h3 style="color:#facc15">Goal: 10,000 USDT</h3>
+    <div class="card">
+        <h2>Donate with USDT TRC20</h2>
+        <p>Scan the QR code to send USDT.</p>
 
-<p>
-Every voluntary contribution matters.
-Thank you for your kindness and support!
-</p>
+        <img
+            class="qr"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
+            alt="USDT TRC20 QR Code"
+        >
 
-<h3>Donate with USDT (TRC20)</h3>
+        <p><strong>Wallet address:</strong></p>
 
-<div class="address" id="wallet">
-TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
-</div>
-  <div id="qrcode" style="
-    background:white;
-    display:inline-block;
-    padding:15px;
-    border-radius:10px;
-    margin:15px;
-"></div>
-<p class="small">Scan QR code to get the wallet address</p>
-<img src="usdt_trc20_qr.png"
-     width="200"
-     height="200"
-     alt="USDT TRC20 QR Code"
-     style="background:white;padding:10px;border-radius:10px;">
-src="usdt_trc20_qr.png"
-width="200"
-height="200"
-alt="USDT TRC20 QR Code"
-style="background:white;padding:10px;border-radius:10px;"
->
-src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-width="200"
-height="200"
-alt="USDT TRC20 QR Code"
-style="background:white;padding:10px;border-radius:10px;"
->
-<button onclick="copyWallet()">
-Copy Wallet Address
-</button>
+        <div class="address" id="wallet">
+            TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
+        </div>
 
-<p class="small">
-Network: TRON (TRC20)<br>
-Currency: USDT
-</p>
+        <button onclick="copyWallet()">Copy Wallet Address</button>
 
-<p id="message" style="color:#facc15"></p>
+        <p class="small">
+            Network: TRON (TRC20) | Currency: USDT
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Donate with Binance Pay</h2>
+        <p>Scan the Binance Pay QR code.</p>
+
+        <img
+            class="qr"
+            src="binance.jpg"
+            alt="Binance Pay QR Code"
+        >
+
+        <p class="small">
+            Please check the payment details before sending.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Thank You!</h2>
+        <p>
+            Every contribution is voluntary.
+            Thank you for supporting our project
+            and helping make a difference.
+        </p>
+    </div>
 
 </section>
 
 <footer>
-<p>One Dollar for Strangers</p>
-<p>Thank you for supporting our project.</p>
+    © 2026 One Dollar for Strangers
 </footer>
 
 <script>
 function copyWallet() {
-    const address = document.getElementById("wallet").innerText.trim();
+    const wallet = "TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
 
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(address).then(() => {
-            document.getElementById("message").innerText =
-            "Wallet address copied!";
-        }).catch(() => {
-            fallbackCopy(address);
-        });
-    } else {
-        fallbackCopy(address);
-    }
-}
-
-function fallbackCopy(address) {
-    const input = document.createElement("textarea");
-    input.value = address;
-    document.body.appendChild(input);
-    input.select();
-
-    try {
-        document.execCommand("copy");
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    } catch (e) {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    }
-
-    document.body.removeChild(input);
-}
-</script>
-
-<div style="text-align:center; margin:30px;">
-  <h2>Pay with Binance Pay</h2>
-  <img src="binance.jpg" alt="Binance Pay QR Code" style="width:250px; max-width:90%; height:auto;">
-  <p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
+    navigator.clipboard.writeText(wallet)
+        .then(() => alert("Wallet address copied!"))
+        .catch(() => alert("Please copy the wallet address manually."));
 }
 </script>
 
 </body>
 </html>
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
-}
-</script>
-
-</body>
-</html>
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
-}
-</script>
-
-</body>
-</html>
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
-}
-</script>
-
-
-<div class="donate">
-<h2>Donate with USDT (TRC20)</h2>
-<p>Wallet address:</p>
-<div class="address" id="wallet">TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc</div>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
-alt="USDT TRC20 QR Code"
-width="250">
-
-<p class="small">Network: TRON (TRC20)<br>Currency: USDT</p>
-<button onclick="copyWallet()">Copy Wallet Address</button>
-<p id="message" class="small"></p>
-</div>
-
-<div class="donate">
-<h2>Pay with Binance Pay</h2>
-<img src="binance.jpg" alt="Binance Pay QR Code" width="250">
-<p>Scan the QR code to send 1 USDT.</p>
-</div>
-
-<p>Thank you for supporting our project!</p>
-<p>Thank you for your kindness ❤️</p>
-</section>
-
-<footer>
-<p>One Dollar for Strangers</p>
-<p>Contact the Project Organizer</p>
-<p>© 2026</p>
-</footer>
-
-<script>
-function copyWallet() {
-    const address = document.getElementById("wallet").innerText;
-    navigator.clipboard.writeText(address).then(() => {
-        document.getElementById("message").innerText =
-        "Wallet address copied!";
-    }).catch(() => {
-        document.getElementById("message").innerText =
-        "Please copy the address manually.";
-    });
-}
-</script>
-
-</body>
-</html>
-/body>
-</html>
-
-</body>
-</html>
-
-
-
