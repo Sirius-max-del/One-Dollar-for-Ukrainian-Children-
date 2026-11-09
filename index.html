@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Dollar for Strangers</title>
+
+<style>
+* { box-sizing: border-box; }
+
+
+
+new QRCode(document.getElementById("qrcode"), {
+    text: "TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc",
+    width: 200,
+    height: 200
+});
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #101827;
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 45px 20px;
+    background: #17243a;
+}
+
+h1 {
+    color: #facc15;
+    font-size: 34px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+section {
+    padding: 25px 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.donate {
+    background: #1c2b43;
+    padding: 25px 18px;
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.address {
+    background: #101827;
+    padding: 14px;
+    border-radius: 8px;
+    word-break: break-all;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+button {
+    background: #facc15;
+    color: #101827;
+    border: none;
+    padding: 15px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.small {
+    color: #b8c4d8;
+    font-size: 13px;
+}
+
+footer {
+    padding: 25px;
+    color: #9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>One Dollar for Strangers</h1>
+<p>One dollar can make a difference.</p>
+<p>Small kindness. Big impact.</p>
+</header>
+
+<section>
+<h2>Our Mission</h2>
+<p>
+We believe that small voluntary donations
+from people around the world can help
+create new opportunities and support
+a better future.
+</p>
+</section>
+
+<section class="donate">
+<h2>Support Our Project</h2>
+
+<h3 style="color:#facc15">Goal: 10,000 USDT</h3>
+
+<p>
+Every voluntary contribution matters.
+Thank you for your kindness and support!
+</p>
+
+<h3>Donate with USDT (TRC20)</h3>
+
+<div class="address" id="wallet">
+TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
+</div>
+  <div id="qrcode" style="
+    background:white;
+    display:inline-block;
+    padding:15px;
+    border-radius:10px;
+    margin:15px;
+"></div>
+<p class="small">Scan QR code to get the wallet address</p>
+<img src="usdt_trc20_qr.png"
+     width="200"
+     height="200"
+     alt="USDT TRC20 QR Code"
+     style="background:white;padding:10px;border-radius:10px;">
+src="usdt_trc20_qr.png"
+width="200"
+height="200"
+alt="USDT TRC20 QR Code"
+style="background:white;padding:10px;border-radius:10px;"
+>
+src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc"
+width="200"
+height="200"
+alt="USDT TRC20 QR Code"
+style="background:white;padding:10px;border-radius:10px;"
+>
+<button onclick="copyWallet()">
+Copy Wallet Address
+</button>
+
+<p class="small">
+Network: TRON (TRC20)<br>
+Currency: USDT
+</p>
+
+<p id="message" style="color:#facc15"></p>
+
+</section>
+
+<footer>
+<p>One Dollar for Strangers</p>
+<p>Thank you for supporting our project.</p>
+</footer>
+
+<script>
+function copyWallet() {
+    const address = document.getElementById("wallet").innerText.trim();
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(address).then(() => {
+            document.getElementById("message").innerText =
+            "Wallet address copied!";
+        }).catch(() => {
+            fallbackCopy(address);
+        });
+    } else {
+        fallbackCopy(address);
+    }
+}
+
+function fallbackCopy(address) {
+    const input = document.createElement("textarea");
+    input.value = address;
+    document.body.appendChild(input);
+    input.select();
+
+    try {
+        document.execCommand("copy");
+        document.getElementById("message").innerText =
+        "Wallet address copied!";
+    } catch (e) {
+        document.getElementById("message").innerText =
+        "Please copy the address manually.";
+    }
+
+    document.body.removeChild(input);
+}
+</script>
+
+</body>
+</html>
+
+
+
