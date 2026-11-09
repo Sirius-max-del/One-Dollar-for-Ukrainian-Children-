@@ -1,9 +1,11 @@
-https://sirius-max-del.github.io/one-dollar-for-Ukrainian children/<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="One Dollar for Ukrainian Children — small kindness, big impact. Supporting Ukrainian children and families.">
+<meta name="theme-color" content="#073968">
 <title>One Dollar for Ukrainian Children ❤️</title>
 
 <style>
@@ -28,7 +30,12 @@ button{
  margin:4px;
  font-weight:bold;
 }
+button:focus-visible{
+ outline:3px solid #ffcf00;
+ outline-offset:3px;
+}
 .lang{background:#fff;color:#0756a5}
+.lang.active{background:#ffd500;color:#17345a}
 .hero{
  background:linear-gradient(135deg,#063b75,#087bd0);
  color:white;
@@ -48,7 +55,10 @@ button{
  padding:35px 15px;
 }
 .goal h2{color:#0756a5}
-.goal strong{font-size:clamp(36px,8vw,55px);color:#0756a5}
+.goal strong{
+ font-size:clamp(36px,8vw,55px);
+ color:#0756a5;
+}
 section{
  max-width:950px;
  margin:auto;
@@ -110,6 +120,11 @@ section{
  font-size:14px;
  line-height:1.7;
 }
+.status{
+ min-height:24px;
+ font-size:14px;
+ color:#0756a5;
+}
 footer{
  background:#073968;
  color:white;
@@ -121,14 +136,16 @@ footer h2{color:#ffd500}
  .hero{padding:55px 15px}
  .card{padding:22px 17px}
  section{padding:20px 13px}
+ nav{padding:9px 4px}
+ button{padding:10px 12px}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<button class="lang" onclick="setLang('en')">🇬🇧 English</button>
+<nav aria-label="Language selection">
+<button class="lang active" onclick="setLang('en')">🇬🇧 English</button>
 <button class="lang" onclick="setLang('uk')">🇺🇦 Українська</button>
 <button class="lang" onclick="setLang('ru')">🇷🇺 Русский</button>
 </nav>
@@ -150,20 +167,19 @@ footer h2{color:#ffd500}
 
 <div class="card">
 <h2 id="missionTitle">OUR MISSION</h2>
-<p id=".</p>
-</div>missionText:"
-<div class="card">
-  <h2 id="missionTitle">OUR MISSION</h2>
-  <p id="missionText">
-    We believe kindness has no borders. Our project brings people together to support Ukrainian children and families in need.
-  </p>
+<p id="missionText">
+We believe kindness has no borders. Our project brings people together to support Ukrainian children and families in need.
+</p>
 </div>
-",
 
 <div class="card ukraine">
 <h2 id="ukraineTitle">🇺🇦 HELPING UKRAINE</h2>
-<h3 id="ukraineSubtitle">Together, we can bring hope to Ukrainian children and families.</h3>
-<p id="ukraineText">The war in Ukraine has affected many lives. Children, families and elderly people need care, support and humanitarian assistance.</p>
+<h3 id="ukraineSubtitle">
+Together, we can bring hope to Ukrainian children and families.
+</h3>
+<p id="ukraineText">
+The war in Ukraine has affected many lives. Children, families and elderly people need care, support and humanitarian assistance.
+</p>
 <p id="helpList">
 ❤️ Supporting Ukrainian children and families.<br>
 🥖 Food and clean drinking water.<br>
@@ -171,38 +187,54 @@ footer h2{color:#ffd500}
 📚 Educational materials for children.<br>
 🏥 Humanitarian assistance.
 </p>
+
 <div class="highlight">
 <h3 id="whyTitle">WHY YOUR DONATION MATTERS</h3>
-<p id="whyText">Even one dollar can make a difference. Together, small acts of kindness can create meaningful change.</p>
+<p id="whyText">
+Even one dollar can make a difference. Together, small acts of kindness can create meaningful change.
+</p>
 <strong>🇺🇦 TOGETHER FOR UKRAINE</strong>
 </div>
 </div>
 
 <div class="card">
 <h2 id="transTitle">TRANSPARENCY MATTERS</h2>
-<p id="transText">We believe every donation deserves responsibility and transparency. Financial updates and information about how funds are used should be shared with supporters.</p>
+<p id="transText">
+We believe every donation deserves responsibility and transparency. Financial updates and information about how funds are used should be shared with supporters.
+</p>
 </div>
 
 <div class="card donate">
 <h2 id="donateTitle">SUPPORT OUR MISSION ❤️</h2>
-<p id="donateText">Join people around the world in bringing hope to those who need it.</p>
+<p id="donateText">
+Join people around the world in bringing hope to those who need it.
+</p>
 
 <h3>USDT TRC20</h3>
 
-<img class="qr"
-src="images/usdt-trc20-qr.png"
-alt="USDT donation QR code"
-onerror="this.style.display='none'">
+<img
+class="qr"
+src="IMG_20261108_185358_829.jpg"
+alt="Donation QR code"
+onerror="this.style.display='none'"
+>
 
 <h3 id="walletTitle">WALLET ADDRESS</h3>
+
 <div class="wallet" id="wallet">
 TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc
 </div>
 
-<button class="copy" onclick="copyWallet()" id="copyBtn">COPY WALLET ADDRESS</button>
+<button class="copy" onclick="copyWallet()" id="copyBtn">
+COPY WALLET ADDRESS
+</button>
 
-<p><strong>Network:</strong> TRON (TRC20)<br>
-<strong>Currency:</strong> USDT</p>
+<p class="status" id="copyStatus" aria-live="polite"></p>
+
+<p>
+<strong>Network:</strong> TRON (TRC20)<br>
+<strong>Currency:</strong> USDT
+</p>
 
 <div class="note" id="security">
 IMPORTANT: Only send USDT using the TRON (TRC20) network. Always verify the wallet address before sending.
@@ -215,21 +247,23 @@ IMPORTANT: Only send USDT using the TRON (TRC20) network. Always verify the wall
 
 <footer>
 <h2>ONE DOLLAR FOR UKRAINIAN CHILDREN ❤️</h2>
-<p id="footerText">Small kindness. Big impact. Together for Ukraine. 🇺🇦</p>
+<p id="footerText">
+Small kindness. Big impact. Together for Ukraine. 🇺🇦
+</p>
 <p>© 2026 One Dollar for Ukrainian Children</p>
 </footer>
 
 <script>
-const walletAddress="TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
+const walletAddress = "TLCcsAFFTsC4yvrSjYLgZ8Tsem6wrChGuc";
 
-const translations={
-en:{
+const translations = {
+en: {
 tagline:"One dollar can make a difference.",
 slogan:"Small kindness. Big impact.",
 goalTitle:"OUR FUNDRAISING GOAL",
 goalText:"Together, we can make a difference.",
 missionTitle:"OUR MISSION",
-missionText:".missionText:"We believe kindness has no borders. Our project brings people together to support Ukrainian children and families in need.",,
+missionText:"We believe kindness has no borders. Our project brings people together to support Ukrainian children and families in need.",
 ukraineTitle:"🇺🇦 HELPING UKRAINE",
 ukraineSubtitle:"Together, we can bring hope to Ukrainian children and families.",
 ukraineText:"The war in Ukraine has affected many lives. Children, families and elderly people need care, support and humanitarian assistance.",
@@ -244,15 +278,18 @@ walletTitle:"WALLET ADDRESS",
 copyBtn:"COPY WALLET ADDRESS",
 security:"IMPORTANT: Only send USDT using the TRON (TRC20) network. Always verify the wallet address before sending.",
 thanks:"Thank you for your kindness! ❤️",
-footerText:"Small kindness. Big impact. Together for Ukraine. 🇺🇦"
+footerText:"Small kindness. Big impact. Together for Ukraine. 🇺🇦",
+copied:"Wallet address copied!",
+copyError:"Please copy the wallet address manually."
 },
-uk:{
+
+uk: {
 tagline:"Один долар може змінити життя.",
 slogan:"Маленька доброта. Великий вплив.",
 goalTitle:"НАША МЕТА ЗБОРУ",
 goalText:"Разом ми можемо змінити світ на краще.",
 missionTitle:"НАША МІСІЯ",
-missionText:"Ми віримо, що доброта не має кордонів. Наш проєкт об'єднує людей задля підтримки тих, хто потребує допомоги.",
+missionText:"Ми віримо, що доброта не має кордонів. Наш проєкт об'єднує людей задля підтримки українських дітей та сімей, які потребують допомоги.",
 ukraineTitle:"🇺🇦 ДОПОМОГА УКРАЇНІ",
 ukraineSubtitle:"Разом ми можемо подарувати надію українським дітям та сім'ям.",
 ukraineText:"Війна в Україні вплинула на життя багатьох людей. Діти, сім'ї та літні люди потребують турботи, підтримки та гуманітарної допомоги.",
@@ -267,15 +304,18 @@ walletTitle:"АДРЕСА ГАМАНЦЯ",
 copyBtn:"СКОПІЮВАТИ АДРЕСУ",
 security:"ВАЖЛИВО: Надсилайте лише USDT через мережу TRON (TRC20). Завжди перевіряйте адресу перед переказом.",
 thanks:"Дякуємо за вашу доброту! ❤️",
-footerText:"Маленька доброта. Великий вплив. Разом заради України. 🇺🇦"
+footerText:"Маленька доброта. Великий вплив. Разом заради України. 🇺🇦",
+copied:"Адресу гаманця скопійовано!",
+copyError:"Будь ласка, скопіюйте адресу вручну."
 },
-ru:{
+
+ru: {
 tagline:"Один доллар может изменить жизнь.",
 slogan:"Маленькая доброта. Большое влияние.",
 goalTitle:"НАША ЦЕЛЬ СБОРА",
 goalText:"Вместе мы можем изменить мир к лучшему.",
 missionTitle:"НАША МИССИЯ",
-missionText:"Мы верим, что доброта не имеет границ. Наш проект объединяет людей ради поддержки тех, кому нужна помощь.",
+missionText:"Мы верим, что доброта не имеет границ. Наш проект объединяет людей ради поддержки украинских детей и семей, которым нужна помощь.",
 ukraineTitle:"🇺🇦 ПОМОЩЬ УКРАИНЕ",
 ukraineSubtitle:"Вместе мы можем подарить надежду украинским детям и семьям.",
 ukraineText:"Война в Украине затронула жизни многих людей. Дети, семьи и пожилые люди нуждаются в заботе, поддержке и гуманитарной помощи.",
@@ -290,28 +330,52 @@ walletTitle:"АДРЕС КОШЕЛЬКА",
 copyBtn:"СКОПИРОВАТЬ АДРЕС",
 security:"ВАЖНО: Отправляйте только USDT через сеть TRON (TRC20). Всегда проверяйте адрес перед отправкой.",
 thanks:"Спасибо за вашу доброту! ❤️",
-footerText:"Маленькая доброта. Большое влияние. Вместе ради Украины. 🇺🇦"
+footerText:"Маленькая доброта. Большое влияние. Вместе ради Украины. 🇺🇦",
+copied:"Адрес кошелька скопирован!",
+copyError:"Пожалуйста, скопируйте адрес вручную."
 }
 };
 
-function setLang(lang){
-const t=translations[lang];
-for(const key in t){
-const el=document.getElementById(key);
-if(el) el.innerHTML=t[key];
-}
-document.documentElement.lang=lang;
+let currentLang = "en";
+
+function setLang(lang) {
+  if (!translations[lang]) return;
+
+  currentLang = lang;
+  const t = translations[lang];
+
+  for (const key in t) {
+    const el = document.getElementById(key);
+
+    if (el) {
+      el.innerHTML = t[key];
+    }
+  }
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll(".lang").forEach(button => {
+    button.classList.toggle(
+      "active",
+      button.getAttribute("onclick") === "setLang('" + lang + "')"
+    );
+  });
 }
 
-function copyWallet(){
-if(navigator.clipboard && window.isSecureContext){
-navigator.clipboard.writeText(walletAddress)
-.then(()=>alert("Wallet address copied!"))
-.catch(()=>alert("Please copy the wallet address manually: "+walletAddress));
-}else{
-alert("Please copy the wallet address manually: "+walletAddress);
+async function copyWallet() {
+  const status = document.getElementById("copyStatus");
+
+  try {
+    await navigator.clipboard.writeText(walletAddress);
+    status.textContent = translations[currentLang].copied;
+  } catch (error) {
+    status.textContent =
+      translations[currentLang].copyError + " " + walletAddress;
+  }
 }
-}
+
+setLang("en");
 </script>
+
 </body>
 </html>
